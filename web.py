@@ -18,7 +18,8 @@ def main():
     st.markdown('## Recomendador de fondos de inversión')
 
     # Text input for the question
-    question = st.text_input("¿Qué tipo de fondo te interesa?")
+    question = st.text_input("¿Qué tipo de fondo te interesa?",
+                             placeholder="quiero un fondo que invierta en paises asiaticos")
 
     # Button to submit the question
     if st.button("Enviar"):
