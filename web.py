@@ -8,6 +8,17 @@ def main():
         print("Performing setup")
         st.session_state.rag = prepare_setup()
         st.session_state.setup_done = True
+
+    # Hide streamlit menu and Deploy button
+    hide_streamlit_style = """
+                            <style>
+                            #MainMenu {visibility: hidden;}
+                            .stDeployButton {display:none;}
+                            footer {visibility: hidden;}
+                            </style>
+                            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)       
+
     # Load the image file
     logo = open('FinGuruLogo.png', 'rb').read()
     # Display the image in the upper left corner
