@@ -22,11 +22,10 @@ def main():
                              placeholder="quiero un fondo que invierta en paises asiaticos")
 
     # Button to submit the question
-    if st.button("Enviar"):
-        if question:
-            with st.spinner("Analizando ..."):
-                answer = st.session_state.rag.invoke(question)
-                st.write(answer)
+    if st.button("Enviar") or question:
+        with st.spinner("Analizando ..."):
+            answer = st.session_state.rag.invoke(question)
+            st.write(answer)
 
 if __name__ == "__main__":
     main()
