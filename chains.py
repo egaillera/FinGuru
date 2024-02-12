@@ -73,7 +73,9 @@ def prepare_setup():
     # Settings
     docs_path = os.getenv('DOCS_PATH')
     vectorstore_path = os.getenv('VECTORSTORE_PATH')
-   
+    model_name = os.getenv('MODEL_NAME')
+
+    print("Using " + model_name)
     print("Preparing data ... ")
     embeddings = OpenAIEmbeddings()
     #embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-xl")
@@ -96,7 +98,7 @@ def prepare_setup():
                 Answer:
                 """
     prompt = ChatPromptTemplate.from_template(template)
-    llm = ChatOpenAI(model_name = 'gpt-4')
+    llm = ChatOpenAI(model_name = model_name)
     #llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", model_kwargs={"temperature":0.5, "max_length":2048})
     
     rag_chain = (
