@@ -87,7 +87,8 @@ def prepare_setup():
     template = """You are a financial assistant for question-answering tasks related to investment funds. 
                 Use the following pieces of retrieved context to answer the question. 
                 The answer should be always in Spanish.
-                If you found a fund, explain its features t a bit
+                Try to provide three recommendations adapted to the request
+                If you found a fund, explain its features a bit and say which bank issues it.
                 If you don't know the answer, just say that you don't know. 
                 Use six sentences maximum and keep the answer concise.
                 Question: {question} 
