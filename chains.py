@@ -16,6 +16,15 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_community.llms import HuggingFaceHub
 from pathlib import Path
 
+'''
+To work properly, this script requires an .env file with the following
+parameters:
+OPENAI_API_KEY=sk-...
+HUGGINGFACEHUB_API_TOKEN=
+DOCS_PATH = 'path_to_docs'
+VECTORSTORE_PATH = 'path_to_vectorstore'
+MODEL_NAME = "gpt-3.5-turbo"
+'''
 
 def create_vectorstore(text_chunks, embeddings,vectorstore_path):
     print("Creating and saving vectorstore ...")
